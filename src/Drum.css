@@ -1,0 +1,32 @@
+.Drum h1 {
+  text-align: center;
+  padding: 10px;
+  font-size: 80px;
+  color: white;
+  font-weight: bold;
+}
+
+.drum-container {
+  display: flex;
+  margin: 0 auto;
+  background: white;
+  max-width: 360px;
+  max-height: 400px;
+  border-radius: 10px;
+}
+
+.drum {
+  color: white;
+  background: #9fd3c7;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 65px;
+  font-weight: bold;
+  border: 1px solid black;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.drum:hover {
+  transform: scale(0.95);
+}
