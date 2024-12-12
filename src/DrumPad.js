@@ -1,9 +1,10 @@
 // DrumPad.js
 import React from "react";
 
-export default function DrumPad({ keyLabel, sound }) {
+export default function DrumPad({ keyLabel, sound, volume }) {
   const playSound = () => {
-    const audio = new Audio(`/sounds/${sound}`); // Make sure the sound files are in public/sounds/
+    const audio = new Audio(`/sounds/${sound}`);
+    audio.volume = volume;
     audio.play();
   };
 

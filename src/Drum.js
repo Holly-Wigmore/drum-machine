@@ -1,9 +1,9 @@
 // Drum.js
-import React from "react";
+import React, { useState } from "react";
 import "./Drum.css";
 import DrumPad from "./DrumPad";
+import KeyboardPlayer from "./KeyboardPlayer";
 
-// Array of drum pads with key labels and corresponding sound files
 const DRUM_PADS = [
   { keyLabel: "Q", sound: "kick.wav" },
   { keyLabel: "W", sound: "snare.mp3" },
@@ -17,19 +17,47 @@ const DRUM_PADS = [
 ];
 
 export default function Drum() {
+  const [volume, setVolume] = useState(0.5);
+
+  const handleVolumeChange = (event) => {
+    setVolume(event.target.value);
+  };
+
   return (
     <div className="Drum">
       <h1>Drum Machine</h1>
       <div className="container-box mx-auto mt-5">
         <div className="grid-container text-center">
           {DRUM_PADS.map((pad, index) => (
-            <DrumPad key={index} keyLabel={pad.keyLabel} sound={pad.sound} />
+            <DrumPad
+              key={index}
+              keyLabel={pad.keyLabel}
+              sound={pad.sound}
+              volume={volume}
+            />
           ))}
         </div>
         <div className="content-container">
-          <div className="row">Row 1</div>
-          <div className="row">Row 2</div>
-          <div className="row">Row 3</div>
+          <div className="content-container">
+            <div className="row">
+              <label htmlFor="volume-slider" className="form-label">
+                Volume
+              </label>
+              <input
+                id="volume-slider"
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value={volume}
+                onChange={handleVolumeChange}
+                className="form-range"
+              />
+            </div>
+          </div>
+          <div className="row">
+            <KeyboardPlayer volume={volume} />
+          </div>
         </div>
       </div>
     </div>

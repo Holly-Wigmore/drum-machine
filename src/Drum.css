@@ -48,3 +48,93 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.content-container .form-label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.content-container .form-range {
+  width: 100%;
+  margin-top: 10px;
+  accent-color: #0b8491; /* Changes slider color */
+}
+.piano-keyboard {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 60px;
+  height: 120px;
+  width: 300px;
+  background: #333;
+  border-radius: 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 10px;
+}
+
+.white-keys {
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.key.white {
+  width: 60px;
+  height: 100px;
+  background: white;
+  border: 1px solid #333;
+  margin: 0 1px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 12px;
+}
+
+.key.white:hover {
+  background: #f1f1f1;
+}
+
+.black-keys {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  z-index: 2;
+  display: flex;
+  gap: 50px;
+}
+
+.key.black {
+  width: 40px;
+  height: 60px;
+  background: black;
+  margin-left: -20px; /* Offset black keys */
+  margin-right: -20px;
+  border-radius: 3px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+}
+
+.key.black.left {
+  margin-left: -15px;
+}
+
+.key.black.right {
+  margin-left: 35px;
+}
+
+.key.black:hover {
+  background: #333;
+}
